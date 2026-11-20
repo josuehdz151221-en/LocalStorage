@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Sistema Medico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center vh-100">
+
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-6">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-dark text-white text-center py-3">
+                        <h4 class="mb-0">Inicio de sesion</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="alert alert-secondary small text-center">
+                            jefe de area / enfermero <br>Clave para todos: <strong>123</strong>
+                        </div>
+                        <form id="formLogin">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Usuario</label>
+                                <input type="text" id="inputUser" class="form-control" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Contraseña</label>
+                                <input type="password" id="inputPass" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100 fw-bold">Ingresar</button>
+                            <div id="errorMsg" class="text-danger mt-3 text-center d-none">Credenciales inválidas.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+              <div class="col-md-6">
+        <img src="Images/inicio.gif" alt="Registro" class="img-fluid">
+      </div>
+        </div>
+    </div>
+
+    <script src="JS/medico.js"></script>
+    <script>    
+        // Si el usuario ya está logueado, lo sacamos del login
+        document.addEventListener('DOMContentLoaded', saltarLoginSiAutenticado);
+        
+        // Conectar el formulario a la función de JS
+        document.getElementById('formLogin').addEventListener('submit', iniciarSesion);
+    </script>
+</body>
+</html>
